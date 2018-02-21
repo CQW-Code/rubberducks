@@ -5,10 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+
 var index = require('./routes/index');
 var rubberducks = require('./routes/rubberducks');
-
-
 
 
 var app = express();

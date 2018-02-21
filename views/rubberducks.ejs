@@ -3,16 +3,16 @@
  <head>
  <% include ./partials/head %>
  </head>
- <body>
+ <body class="blue lighten-4">
    <header>
      <% include ./partials/navbar %>
    </header>
-   <h1 class='center'>My Movies</h1>
+   <h1 class='center'>My Rubber Duckies</h1>
    <hr />
    <div class='row'>
      <div class='col s12 m4'>
-       <h3>Add Movie</h3>
-       <form action='/movies' method='POST'>
+       <h3>Add Duck</h3>
+       <form action='/rubberducks' method='POST'>
          <input type='text' name='title' placeholder='Title' />
          <button class='btn btn-waves' type='submit'>Add</button>
        </form>
@@ -24,25 +24,18 @@
          <th>x</th>
        </thead>
        <tbody>
-         <% rubberducks.forEach( function(rubberducks) { %>
-           <% var url = "/rubberducks/" + rubberducks.id + "?_method=DELETE" %>
-           <% var editUrl = "/rubberducks/" + rubberducks.id + "/edit" %>
-           <tr>
-             <td><%= rubberducks.title %></td>
-             <td>
-               <a class="btn" href=<%= editUrl %>>Edit</a>
-             </td>
-             <td>
-               <form method="POST" action=<%= url %> >
-                 <button class="btn red">Delete</button>
-                 <% var url = "/movies/" + movie.id + "?_method=DELETE" %>
-                <% var editUrl = "movies/" + movie.id + "/edit" %>
-          <tr>
-            <td><%= movie.title %></td>
-            <td>
-              <a class="btn" href=<%= editUrl %>>Edit</a>
-            </td>
-               </form>
+          <% rubberducks.forEach( function(rubberduck) { %>
+            <% var url = "/rubberducks/" + rubberduck.id + "?_method=DELETE" %>
+            <% var editUrl = "/rubberducks/" + rubberduck.id + "/edit" %>
+            <tr>
+              <td><%= rubberduck.title %></td>
+              <td>
+                <a class="btn" href=<%= editUrl %>>Edit</a>
+              </td>
+              <td>
+                <form method="POST" action=<%= url %> >
+                  <button class="btn red">Delete</button>
+                </form>
              </td>
          <% }); %>
        </tbody>

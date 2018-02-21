@@ -1,11 +1,11 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Ducks = sequelize.define('Ducks', {
+  var Duck = sequelize.define('Duck', {
     title: DataTypes.STRING,
     description: DataTypes.STRING
   }, {});
-  Ducks.associate = function(models) {
+  Duck.associate = function(models) {
     // associations can be defined here
   };
-  return Ducks;
+  return Duck;
 };
